@@ -1,0 +1,59 @@
+.large-hero {
+	position: relative;
+
+	&__text-content { /*& will write the name of the parent block, here, large-hero, in the post css*/
+		position: absolute;
+		top: 50%;
+		transform:  translateY(-40%);
+		left: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	&__title {
+		font-weight: 300;
+		color: $mainBlue;
+		margin: 0;
+		font-size: 1.1rem;
+
+		@mixin atSmall {
+			font-size: 2rem;
+		}
+
+		@mixin atMedium {
+			font-size: 3.2rem;
+		}
+
+		@mixin atLarge {
+			font-size: 4.8rem;
+		}
+ 
+
+	}
+
+	&__subtitle {
+		font-weight: 300;
+		color: $mainBlue;
+		margin: 0;
+		font-size: 1.1rem;
+		@mixin atSmall {
+			font-size: 3.2rem;
+		}
+	}
+
+	&__description {
+		color: #fff;
+		font-size: 1.875rem;
+		margin: 10;
+		font-weight: 100;
+		text-shadow:  2px 2px 0 rgba(0, 0, 0, .1); /*black shadow that is 10% visible*/
+		max-width: 30rem; /*480px/16= 30 rem*/
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+
+
+
