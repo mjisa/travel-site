@@ -2,10 +2,16 @@
 
 	@mixin clearfix;
 
-
-
 	&--gutters {
 		margin-right: -65px;
+	}
+
+	&--gutters-large {
+		margin-right: -100px;
+	}
+
+	&--gutters-large > div {
+		padding-right: 100px;
 	}
 
 	&--gutters > div {
@@ -24,6 +30,11 @@
 		&__medium-4 {
 			float: left;
 			width: 33.33%;
+		}
+
+		&__medium-6 {
+			float: left;
+			width: 50%;
 		}
 
 		&__medium-4--larger {
