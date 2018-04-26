@@ -461,10 +461,24 @@ img {
 	height: auto;
 }
 
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box; /*changes the way the browser calculates the width... without it the column layout breaks coz 33.33 + 66.66 + 65px of gutters is more than a 100% width.*/
+}
+
+a {
+	color: #d59541;
+}
+
 .large-hero {
+	border-bottom: 8px solid #2f5572;
 	position: relative;
 
 }
+
+.large-hero__image {
+		display: block;
+	}
 
 .large-hero__text-content { /*& will write the name of the parent block, here, large-hero, in the post css*/
 		position: absolute;
@@ -480,35 +494,13 @@ img {
 		font-weight: 300;
 		color: #2f5572;
 		margin: 0;
-		font-size: 1.1rem;
- 
-
+		font-size: 2.4rem;
 	}
 
 @media (min-width: 530px) {
 
 .large-hero__title {
-			font-size: 2rem
- 
-
-	}
-	}
-
-@media (min-width: 800px) {
-
-.large-hero__title {
-			font-size: 3.2rem
- 
-
-	}
-	}
-
-@media (min-width: 1200px) {
-
-.large-hero__title {
 			font-size: 4.8rem
- 
-
 	}
 	}
 
@@ -516,25 +508,31 @@ img {
 		font-weight: 300;
 		color: #2f5572;
 		margin: 0;
-		font-size: 1.1rem;
+		font-size: 1.5rem;
 	}
 
 @media (min-width: 530px) {
 
 .large-hero__subtitle {
-			font-size: 3.2rem
+			font-size: 2.9rem
 	}
 	}
 
 .large-hero__description {
 		color: #fff;
-		font-size: 1.875rem;
-		margin: 10;
-		font-weight: 100;
+		font-size: 1.1rem;
+		font-weight: 100;		
 		text-shadow:  2px 2px 0 rgba(0, 0, 0, .1); /*black shadow that is 10% visible*/
 		max-width: 30rem; /*480px/16= 30 rem*/
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+@media (min-width: 530px) {
+
+.large-hero__description {
+			font-size: 1.875rem
+	}
 	}
 
 .btn {
@@ -550,8 +548,180 @@ img {
 	}
 
 .btn--large{
-		font-size:  1.25rem;
 		padding: 1.1rem 1.9rem;
+	}
+
+@media (min-width: 530px) {
+
+.btn--large{
+			font-size:  1.25rem
+	}
+	}
+
+.wrapper{
+	overflow: hidden;
+	padding-left:  18px;
+	padding-right:  18px;
+	max-width: 1236px; /*we had 36 to include the padding*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrapper--medium{
+		max-width: 976px;
+	}
+
+.wrapper .wrapper { /*means that any wrapper nested in another wrapper should have no padding at all*/
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+.wrapper--b-margin {
+		margin-bottom: 1rem;
+		
+	}
+
+/*reduces the margin for mobiles*/
+
+@media (min-width: 530px) {
+
+.wrapper--b-margin {
+			margin-bottom: 3.875rem
+		
+	}
+	}
+
+.page-section {
+	padding: 1.2rem 0;
+}
+
+@media (min-width: 800px) {
+
+.page-section {
+		padding: 4.5rem 0
+}
+	}
+
+.page-section--blue{
+		background-color: #2f5572;
+		color: #fff;
+	}
+
+.headline {
+	font-size: 1.9rem;
+	font-weight: 300;
+	color: #2f5572;
+}
+
+@media (min-width: 530px) {
+
+.headline {
+		font-size: 2.875rem
+}
+	}
+
+.headline--centered {
+		text-align: center;
+	}
+
+.headline--orange{
+		color: #d59541;
+	}
+
+.headline--small{
+		font-size: 1.2rem;
+	}
+
+@media (min-width: 530px) {
+
+.headline--small{
+			font-size: 2.875rem
+	}
+	}
+
+.headline--narrow{
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+.headline--light{
+		font-weight: 100;
+	}
+
+.headline--b-margin-small {
+		margin-bottom: .5em;
+	}
+
+.headline--b-margin-large {
+		margin-bottom: 1.6em;
+	}
+
+.headline--no-t-margin {
+		margin-top: 0;
+	}
+
+.row::after{ /*it's like adding an empty div that clears the row from what comes below it*/
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+.row--gutters {
+		margin-right: -65px;
+	}
+
+.row--gutters > div {
+		padding-right: 65px;
+	}
+
+.row__b-margin-until-medium {
+		margin-bottom:  1rem;
+	}
+
+@media (min-width: 800px) {
+
+.row{ /* By including those styles in a mixin it sets these properties for medium screens only... when on a mobile phone, the data will only be displayed on a single column */
+
+	
+}
+		.row__b-margin-until-medium {
+			margin-bottom: 0;
+		}
+
+		.row__medium-4 {
+			float: left;
+			width: 33.33%;
+		}
+
+		.row__medium-4--larger {
+			width: 37%;
+		}
+
+		.row__medium-8 {
+			float: left;
+			width: 66.66%;
+		}
+
+		.row__medium-8--smaller {
+			width: 63%;
+		}
+	}
+
+.generic-content-container p {
+		line-height: 1.65;
+		margin: 1.8rem 0;
+	}
+
+@media (min-width: 530px) {
+
+.generic-content-container p {
+			font-size: 1.125rem
+	}
+	}
+
+.generic-content-container p a { /*the a could be nested inside the p tag definition but it's better to avoid more than one level of nesting*/
+		font-weight: 700;
 	}
 
 

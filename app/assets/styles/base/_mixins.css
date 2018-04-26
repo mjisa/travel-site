@@ -15,3 +15,11 @@
 		@mixin-content;
 	}
 }
+
+@define-mixin clearfix {
+	&::after{ /*it's like adding an empty div that clears the row from what comes below it*/
+		content: "";
+		clear: both;
+		display: table;
+	}
+}

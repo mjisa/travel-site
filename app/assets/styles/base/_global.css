@@ -8,3 +8,11 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+* {
+	box-sizing: border-box; /*changes the way the browser calculates the width... without it the column layout breaks coz 33.33 + 66.66 + 65px of gutters is more than a 100% width.*/
+}
+
+a {
+	color: $mainOrange;
+}
